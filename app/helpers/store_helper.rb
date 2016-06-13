@@ -5,6 +5,7 @@ module StoreHelper
       unit: "тг.", 
       precision: 0, 
       separator: " ", 
+      delimiter: " ",
       format: "%n %u")
   end 
 end
