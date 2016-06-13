@@ -20,21 +20,30 @@
         <li><a href="#">Вторые блюда</a></li>
         <li><a href="#">Роллы/сеты</a></li>
         <li><a href="#">Напитки</a></li>
-        <li><a href="#">
+        <li><a id="show-cart" href="#">
           <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
             <%= render @cart %>
           <% end %>
-        <br> Корзина</a></li>
+        <br> Корзина</a>
+        
+        </li>
       </ul>
     </div>
   </div>
   <div id="slogan">
     <div class="wrapper">
-      <h1>Доставка еды в течении 45 минут, или мы вернем Вам деньги</h1>
+      <!-- <h1>Доставка еды в течении 45 минут, или мы вернем Вам деньги</h1> -->
     </div>
   </div>
-  <div id="slider">
-
+  <div class="owl-carousel">
+    <div> Your Content </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+ 
   </div>
   <div class="wrapper">    
     <%= yield %>

@@ -48,3 +48,5 @@ end
 
 gem 'normalize-rails'
 gem 'jquery-ui-rails'
+
+gem 'owlcarousel-rails'
