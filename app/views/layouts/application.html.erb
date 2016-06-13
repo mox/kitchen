@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KitchenApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <div class="wrapper">
+      <a id="logo" href="/"><%= image_tag 'logo.png' %></a>
+    </div>
+  </header>
+  <div id="menu">
+    <div class="wrapper">
+      <ul>
+        <li><a href="#">Доставка</a></li>
+        <li><a href="#">Первые блюда</a></li>
+        <li><a href="#">Вторые блюда</a></li>
+        <li><a href="#">Роллы/сеты</a></li>
+        <li><a href="#">Напитки</a></li>
+        <li><a href="#">
+          <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+            <%= render @cart %>
+          <% end %>
+        <br> Корзина</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="slogan">
+    <div class="wrapper">
+      <h1>Доставка еды в течении 45 минут, или мы вернем Вам деньги</h1>
+    </div>
+  </div>
+  <div id="slider">
+
+  </div>
+  <div class="wrapper">    
+    <%= yield %>
+  </div>
+
+</body>
+</html>
