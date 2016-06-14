@@ -1,1 +1,30 @@
-<% if notice %><p id="notice"><%= notice %></p><% end %><div id="catalog">  <h2 id="menu-with-bg">Меню</h2>  <% @products.each do |product| %>     <div class="entry">         <%= image_tag(product.image_url) %>         <h3><%= product.title %></h3>         <%= sanitize(product.description) %>         <div class="price_line">             <span class="price"><%= product.price %></span>             <%= button_to 'Add to Cart',                 line_items_path(product_id: product),                 remote: true %>         </div>     </div>  <% end %></div>
+<div class="owl-carousel">
+    <% @sliders.each do |slide| %>
+        <div class='slide'>
+            <%= image_tag(slide.image_url) %>
+        </div>
+    <% end %>
+</div>
+<div class="wrapper">    
+ 
+    <% if notice %>
+    <p id="notice"><%= notice %></p>
+    <% end %>
+    <div id="catalog">
+    <h2 id="menu-with-bg">Меню</h2>
+
+    <% @products.each do |product| %>
+        <div class="entry">
+            <%= image_tag(product.image_url) %>
+            <h3><%= product.title %></h3>
+            <%= sanitize(product.description) %>
+            <div class="price_line">
+                <span class="price"><%= product.price %></span>
+                <%= button_to 'Add to Cart',
+                    line_items_path(product_id: product),
+                    remote: true %>
+            </div>
+        </div>
+    <% end %>
+    </div>
+</div>

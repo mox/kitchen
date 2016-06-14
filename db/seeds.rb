@@ -43,9 +43,25 @@ Product.create(
   price: "2500"
 )
 
-Product.create(
-  title: "Роял Ролл",
-  description: "Капуста, икра",
-  image_url: "spice-tobic.jpg",
-  price: "2500"
+Slider.delete_all
+
+Slider.create(
+  name: '1',
+  image_url: 'slide1.jpg',
+  is_public: true,
+  weight: 1
+)
+
+Slider.create(
+  name: '2',
+  image_url: 'slide2.jpg',
+  is_public: true,
+  weight: 2
+)
+
+Slider.create(
+  name: '3',
+  image_url: 'slide3.jpg',
+  is_public: true,
+  weight: 3
 )
