@@ -1,0 +1,47 @@
+@import "susy";
+
+$susy: (
+  container: 1024px,
+  columns: 12,
+  gutters: 1/4,
+  global-box-sizing: border-box,
+  debug: (
+    image: show,
+    output: background,
+  ),
+);
+
+
+.wrapper{
+  @include container;
+}
+
+header{
+	
+	.phones{
+		@include span(first 5);
+	}
+	.logo{
+		@include span(2 at 2);
+		a{padding: 0;}
+		img{margin: 10px;}
+	}
+}
+#menu{
+	ul{
+		@include span(12 first last);
+	}
+	li{
+		&:last-child{
+			float: right;
+		}
+	}
+}
+
+#catalog{
+	margin: 0;
+  	
+	.entry{
+		@include gallery(4);
+	}
+}

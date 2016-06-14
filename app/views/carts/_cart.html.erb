@@ -1,14 +1,16 @@
-<% unless cart.line_items.empty? %>
-  <span><%= to_tenge(cart.total_price) %></span>
+<% unless cart.line_items.empty? %> 
+  <span><%= to_tenge(cart.total_price) %></span> 
   <div id="cart-description">
     <table>
       <%= render(cart.line_items) %>
           <tr class="total_line">
-              <td colspan="2">Total</td>
-      <td class="total_cell"></td> </tr>
+              <td colspan="2">Всего</td>
+      <td class="total_cell"><%= to_tenge(cart.total_price) %></td> </tr>
       </table>
       <%= button_to "Заказать", new_order_path, method: :get %>
-      <%= button_to 'Очистить корзину', cart, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= button_to 'Очистить корзину', cart, method: :delete, data: { confirm: 'Вы уверены, что хотите очистить корзину?' } %>
     </table>
   </div>
+<% else %>      
+  <span><%= cart.nil? ? to_tenge(0) : to_tenge(cart.total_price) %></span>
 <% end %>

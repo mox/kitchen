@@ -4,12 +4,20 @@
   <title>KitchenApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Ubuntu&subset=latin,cyrillic' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <header>
     <div class="wrapper">
-      <a id="logo" href="/"><%= image_tag 'logo.png' %></a>
+      <div class="phones">
+        <a href="#">+7 777 333 99 00</a>
+        <a href="#">+7 7232  33 22 11</a>
+      </div>
+      <div class="logo"><a id="logo" href="/"><%= image_tag 'logo.png' %></a></div>
+      <div class="social">
+        
+      </div>
     </div>
   </header>
   <div id="menu">
@@ -20,9 +28,10 @@
         <li><a href="#">Вторые блюда</a></li>
         <li><a href="#">Роллы/сеты</a></li>
         <li><a href="#">Напитки</a></li>
-        <li><a id="show-cart" href="#">
+        <li><a id="show-cart">
           <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
             <%= render @cart %>
+          
           <% end %>
         <br> Корзина</a>
         

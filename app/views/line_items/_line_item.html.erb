@@ -6,4 +6,5 @@
      <td><%= line_item.quantity %>&times;</td>
      <td><%= line_item.product.title %></td>
      <td class="item_price"><%= to_tenge(line_item.total_price) %></td>
+      <td class="delete_item"><%= link_to "(x)", line_item_path(line_item), method: :delete %> </td>
 </tr>

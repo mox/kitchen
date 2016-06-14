@@ -1,17 +1,12 @@
-// Place all the styles related to the Store controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "mixins";
+
 html, body{padding: 0;margin: 0;}
 
-.wrapper{
-  margin: 0 auto;
-  width: 1024px;
-}
-#logo{
-  img{margin: 20px;}
+body{
+  font-family: 'Ubuntu', sans-serif;
 }
 a{
-  padding: 10px 20px;
+  // padding: 10px 20px;
   text-decoration: none;
   margin: 0;
   &:hover{
@@ -19,17 +14,54 @@ a{
   }
 }
 header{
-  background-color: #000;
+  background:#000 image-url("fire.png") no-repeat 50% 5px;
+  background-size: 30%;
   height: 160px;
-  text-align: center;
-
+  .wrapper{
+    position: relative;
+    z-index: 9999;
+  }
   #logo{
     img{
-      width: 150px;}
+      width: 150px;
     }
+  }
+  
+  &::after{
+    @include border-radius(50%);
+    border-bottom: 0.01em solid yellow;
+    display: block;
+    content: "";
+    position: absolute;
+    height: 150px;
+    width: 100%;
+    top: -1px;
+  }
+
+}
+.phones{
+  margin-top: 15px;
+  a{
+    color: #fff;
+    display: inline-block;
+    font-size: 28pt;
+    font-weight: 900;
+    margin:5px 0;
+  }
 }
 #menu{
   background-color: #000;
+  
+  position: fixed;
+	top: 150px;
+  left:0;
+  z-index: 9999;
+  width: 100%;
+
+  &.fix-menu{
+    top:0;
+  }
+
   a{color: #fff;}
   ul{
     list-style-type: none;
@@ -59,11 +91,9 @@ header{
   text-align: center;
 }
 #catalog{
-  img{width: 300px;}
+  img{width: 100%;}
   .entry{
-    float: left;
-    margin: 20px;
-
+    
     .price_line{
       .button_to{
         float: right;
