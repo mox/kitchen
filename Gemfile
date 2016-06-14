@@ -51,5 +51,9 @@ gem 'jquery-ui-rails'
 
 gem 'owlcarousel-rails'
 
-
 gem 'susy'
+
+gem 'devise'
+
+gem 'carrierwave'
+

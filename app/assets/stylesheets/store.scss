@@ -13,8 +13,28 @@ a{
     background-color: red;
   }
 }
+#cart{
+  position: relative;
+}
+#cart-description{
+  float: right;
+  position: absolute;
+  right: -10px;
+  top: 75px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  min-width: 240px;
+  table{
+    width: 100%;
+  }
+  input{
+    float: right;
+    margin: 5px 0;
+  }
+}
 header{
-  background:#000 image-url("fire.png") no-repeat 50% 5px;
+  background:
+    #000 image-url("fire.png") no-repeat 50% 5px;
   background-size: 30%;
   height: 160px;
   .wrapper{
@@ -113,4 +133,7 @@ header{
   .slide{
     img{width: 100%;}
   }
+}
+#slogan{
+  margin-top: 85px;
 }

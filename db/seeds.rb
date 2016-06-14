@@ -65,3 +65,12 @@ Slider.create(
   is_public: true,
   weight: 3
 )
+
+Admin.delete_all
+
+Admin.create(
+  email: 'mokozhe@gmail.com',
+  password: '123asd123',
+  password_confirmation: '123asd123'
+  )
+

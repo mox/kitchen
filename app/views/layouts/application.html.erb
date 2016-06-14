@@ -29,9 +29,8 @@
         <li><a href="#">Роллы/сеты</a></li>
         <li><a href="#">Напитки</a></li>
         <li><a id="show-cart">
-          <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-            <%= render @cart %>
-          
+          <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>             
+            <%= render partial: 'carts/cart', locals: { cart: @cart } %>
           <% end %>
         <br> Корзина</a>
         
@@ -39,14 +38,24 @@
       </ul>
     </div>
   </div>
+  
+     
   <div id="slogan">
     <div class="wrapper">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <!-- <h1>Доставка еды в течении 45 минут, или мы вернем Вам деньги</h1> -->
     </div>
   </div>
-     
   <%= yield %>
  
-
+  <footer>
+    <div class="wrapper">
+      <p>
+        Все права защищены. &copy; 2016
+        <%= render 'layouts/admin_logging' %>
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
