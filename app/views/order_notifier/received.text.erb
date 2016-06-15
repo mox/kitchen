@@ -1,3 +1,7 @@
-OrderNotifier#received
+Уважаемый(ая) <%= @order.name %> совершил заказ.
 
-<%= @greeting %>, find me in app/views/order_notifier/received.text.erb
+Состав:
+
+<%= render @order.line_items, format: 'text' -%>
+
+Телефон: <%= order.phone %>

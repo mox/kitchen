@@ -41,7 +41,6 @@ class OrdersController < ApplicationController
         OrderNotifier.received(@order).deliver
         format.html { redirect_to store_url, notice:
             'Спасибо за заказ, дождитесь ответа оператора.' }
-        format.json { render :show, status: :created, location: @order }
       else
         @cart = current_cart
         format.html { render :new }

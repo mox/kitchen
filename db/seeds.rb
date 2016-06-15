@@ -12,35 +12,50 @@ Product.create(
   title: "Киото маки",
   description: "Рис, рыба, капуста, икра",
   image_url: "kioto-maki.jpg",
-  price: "1000"
+  price: "1000",
+  is_public: true,
+  category: Product::CATEGORIES[0],
+  is_hot: false
 )
 
 Product.create(
   title: "Ролл",
   description: "Рис, икра",
   image_url: "roll-c.jpg",
-  price: "3500"
+  price: "3500",
+  is_public: true,
+  category: Product::CATEGORIES[1],
+  is_hot: true
 )
 
 Product.create(
   title: "Роллс ролл",
   description: "Рис, угорь",
   image_url: "roll-k.jpg",
-  price: "2000"
+  price: "2000",
+  is_public: true,
+  category: Product::CATEGORIES[2],
+  is_hot: false
 )
 
 Product.create(
   title: "Ролл ветчина",
   image_url: "roll-l.jpg",
   description: "Рис, капуста, ветчина",
-  price: "1500"
+  price: "1500",
+  is_public: true,
+  category: Product::CATEGORIES[3],
+  is_sale: true
 )
 
 Product.create(
   title: "Роял Ролл",
   description: "Капуста, икра",
   image_url: "spice-tobic.jpg",
-  price: "2500"
+  price: "2500",
+  is_public: true,
+  category: Product::CATEGORIES[0],
+  is_new: true
 )
 
 Slider.delete_all

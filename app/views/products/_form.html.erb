@@ -27,6 +27,26 @@
     <%= f.label :price %><br>
     <%= f.number_field :price %>
   </div>
+  <div class="field">
+    <%= f.label "Категория" %>
+    <%= f.select :category, Product::CATEGORIES %>
+  </div>
+  <div class="field">
+    <%= f.label "Опубликовано?" %><br>
+    <%= f.check_box :is_public %>
+  </div>
+  <div class="field">
+    <%= f.label "Новинка?" %><br>
+    <%= f.check_box :is_new %>
+  </div>
+  <div class="field">
+    <%= f.label "Супер цена?" %><br>
+    <%= f.check_box :is_sale %>
+  </div>
+  <div class="field">
+    <%= f.label "Хит продаж?" %><br>
+    <%= f.check_box :is_hot %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

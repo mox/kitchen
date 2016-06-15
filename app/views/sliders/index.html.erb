@@ -1,0 +1,11 @@
+<h2>Слайдер</h2>
+
+<%= link_to "Добавить слайд", new_slider_path %>
+
+<% @sliders.each do |slide| %>
+<div>
+	<%= image_tag slide.image_url %>
+	<%= link_to "Изменить", edit_slider_path(slide) %>
+	<%= link_to "Удалить", slider_path(slide), method: :delete %>
+</div>
+<% end %>		

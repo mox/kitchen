@@ -49,7 +49,7 @@ header{
   
   &::after{
     @include border-radius(50%);
-    border-bottom: 0.01em solid yellow;
+    border-bottom: 0.5px solid yellow;
     display: block;
     content: "";
     position: absolute;
@@ -110,10 +110,31 @@ header{
   // width: 646px;
   text-align: center;
 }
-#catalog{
-  img{width: 100%;}
+$product-classes: "hot" "new" "sale";
+@each $suffix-classes in $product-classes{
+  .entry-is-#{$suffix-classes}{
+    &::after{
+      background: image-url("#{$suffix-classes}.png") no-repeat 0 0;
+      content: '';
+      display: block;
+      position: absolute;
+      height: 120px;
+      width: 120px;
+      z-index: 10;
+      background-size: 100%;
+      top: -15px;
+      left: -10px;
+    }
+  }
+}
+#catalog{  
   .entry{
-    
+    position: relative;
+    z-index: 5;
+    min-height: 400px;
+    img{
+      width: 100%;
+    }
     .price_line{
       .button_to{
         float: right;

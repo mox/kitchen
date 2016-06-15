@@ -15,7 +15,10 @@
     
 
     <% @products.each do |product| %>
-        <div class="entry">
+        <div class="entry 
+            <%= is_new(product) %>
+            <%= is_hot(product) %>
+            <%= is_sale(product) %>">
             <%= image_tag(product.image_url) %>
             <h3><%= product.title %></h3>
             <%= sanitize(product.description) %>

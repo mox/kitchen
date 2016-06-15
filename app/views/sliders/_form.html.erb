@@ -1,0 +1,48 @@
+<%= form_for(@slider) do |f| %>
+  <% if @slider.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@slider.errors.count, "error") %> prohibited this slider from being saved:</h2>
+
+      <ul>
+      <% @slider.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Описание (для поисковиков)" %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  
+
+  <% unless @slider.image_url? %>
+    <div class="field">
+      <%= f.label :image_url %><br>
+      <%= f.file_field :image_url %>
+    </div>
+  <% else %>  
+    <div>
+      <%= image_tag @slider.image_url %>
+      <label>
+        <%= f.check_box :remove_image_url %>
+        Remove image_url
+      </label>
+    </div>
+  <% end %>
+
+ 
+  <div class="field">
+    <%= f.label :is_public %><br>
+    <%= f.check_box :is_public %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.number_field :weight %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

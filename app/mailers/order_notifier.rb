@@ -1,4 +1,5 @@
 class OrderNotifier < ApplicationMailer
+  add_template_helper(StoreHelper)
 
   default from: 'Экспресс Кухня <depot@example.com>'
 
@@ -10,7 +11,7 @@ class OrderNotifier < ApplicationMailer
   def received(order)
     @order = order
 
-    mail to: "mokozhe@gmail.com", subject: "Новый заказ"
+    mail to: "mokozhe@gmail.com, gasangasanov023@gmail.com", subject: "Новый заказ"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
