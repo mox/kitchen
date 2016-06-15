@@ -7,7 +7,7 @@ class OrderNotifier < ApplicationMailer
   #
   #   en.order_notifier.received.subject
   #
-  def received
+  def received(order)
     @order = order
 
     mail to: "mokozhe@gmail.com", subject: "Новый заказ"
