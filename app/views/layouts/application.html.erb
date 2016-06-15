@@ -39,14 +39,17 @@
     </div>
   </div>
   
-     
-  <div id="slogan">
-    <div class="wrapper">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <!-- <h1>Доставка еды в течении 45 минут, или мы вернем Вам деньги</h1> -->
-    </div>
+  <div id="messages">
+  <% if notice %>
+        <p class="notice"><%= notice %></p>
+        
+  <% end %>
+  <% if alert %>
+        
+        <p class="alert"><%= alert %></p>
+  <% end %>
   </div>
+
   <%= yield %>
  
   <footer>

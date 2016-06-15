@@ -2,6 +2,8 @@ class OrdersController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:new, :create]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, except: [:new, :create]
+  layout 'admin', except: [:new, :create]
 
   # GET /orders
   # GET /orders.json
@@ -17,8 +19,9 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     if @cart.line_items.empty?
-      redirect_to store_url, notice: "Your cart is empty"
-    return end
+      redirect_to store_url, notice: "Ваша корзина пуста"
+      return
+    end
     @order = Order.new
   end
 
@@ -35,10 +38,12 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
+        OrderNotifier.received(@order).deliver
         format.html { redirect_to store_url, notice:
-            'Спасибо, ваш заказ обрабатывается оператором.' }
+            'Спасибо за заказ, дождитесь ответа оператора.' }
         format.json { render :show, status: :created, location: @order }
       else
+        @cart = current_cart
         format.html { render :new }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end

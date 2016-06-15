@@ -5,4 +5,12 @@ class ApplicationController < ActionController::Base
 
   include CurrentCart
   before_action :set_cart
+
+  private
+  	def authenticate_admin!
+  		authenticate_user!
+  		unless current_user.admin?
+  			redirect_to store_url, alert: "Вы не являетесь администратором"
+  		end
+  	end
 end

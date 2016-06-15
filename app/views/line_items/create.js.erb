@@ -1,9 +1,14 @@
+$('#notice').hide();
+
 if ($('#cart tr').length == 1) { $('#cart').show('blind', 1000); }
 
 $('#cart').
   html("<%= escape_javascript render(@cart) %>");
   
-$("#cart-description").hide();
+// $("#cart-description").hide();
 
-$('#current_item').css({'background-color':'#88ff88'}).
-  animate({'background-color':'#114411'}, 1000);
+$('#current_item').css({'background-color':'red'}).
+  animate({'background-color':'#000'}, 1000);
+
+$('#cart span').css({'background-color':'red'}).
+  animate({'background-color':'#000'}, 1000);

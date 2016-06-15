@@ -130,10 +130,31 @@ header{
 }
 
 .owl-carousel{
+  margin-top: 75px;
   .slide{
     img{width: 100%;}
   }
 }
-#slogan{
-  margin-top: 85px;
+#messages{
+  margin: 25px 20px;
+  position: absolute;
+  top: 220px;
+  width: 97%;
+  z-index: 9999;
+
+  p{
+    padding: 30px;
+
+    color: #fff;
+    font-size: 14pt;
+    text-align: center;
+  }
+  .alert{
+    border: 5px solid darken(red, 10%);
+    background-color: darken(red, 30%);
+  }
+  .notice{
+    border: 5px solid darken(green, 10%);
+    background-color: darken(lightgreen, 50%);
+  }
 }

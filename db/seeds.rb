@@ -66,11 +66,21 @@ Slider.create(
   weight: 3
 )
 
-Admin.delete_all
+User.delete_all
 
-Admin.create(
+User.create(
   email: 'mokozhe@gmail.com',
   password: '123asd123',
-  password_confirmation: '123asd123'
+  password_confirmation: '123asd123',
+  admin: true
   )
+
+10.times do |n|
+  User.create(
+    email: "user_#{n}@mail.nn",
+    password: '123asd123',
+    password_confirmation: '123asd123',
+    admin: false
+  )
+end
 
