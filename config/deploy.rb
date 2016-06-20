@@ -8,9 +8,9 @@ set :repo_url, 'git@github.com:mox/kitchen.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/root/kitchen/'
-set :user,            'deploy'
-set :deploy_to, 'kitchen'
+# set :deploy_to, '/root/kitchen/'
+# set :user,            'deploy'
+# set :deploy_to, 'kitchen'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
