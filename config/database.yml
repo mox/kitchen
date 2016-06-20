@@ -6,7 +6,7 @@
 #
 default: &default
   adapter: postgresql
-  user: kitchen_db
+  user: kitchen
   password: "123asd123"
   pool: 5
   timeout: 5000
