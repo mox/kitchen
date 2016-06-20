@@ -10,6 +10,7 @@ default: &default
   password: "123asd123"
   pool: 5
   timeout: 5000
+  host: localhost
 
 development:
   <<: *default
