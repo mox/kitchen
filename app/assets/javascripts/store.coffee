@@ -2,6 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 ready = ->
+  $("#messages" ).fadeOut(3000);
+
   $("#cart-description").hide()
   $("#show-cart").click ->
     $("#cart-description").toggle()

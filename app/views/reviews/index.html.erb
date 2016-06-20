@@ -1,0 +1,22 @@
+<h2>Отзывы</h2>
+<table>
+<tr>
+	<th>Имя</th>
+	<th>Текст</th>
+	<th>Опубликовано</th>
+	<th>Дата</th>
+	<th>&nbsp;</th>
+</tr>
+<% @reviews.each do |review| %>
+	<tr>
+		<td><%= review.name %></td>
+		<td><%= truncate(review.description) %></td>
+		<td><%= review.is_public %></td>
+		<td><%= review.created_at %></td>
+		<td>
+			<%= link_to "Изменить", edit_review_path(review) %>
+			<%= link_to "Удалить", review_path(review), method: :delete, confirm: "Вы уверены, что хотите удалить отзыв?" %>
+		</td>
+	</tr>
+<% end %>
+</table>

@@ -1,0 +1,39 @@
+<%= form_for(@review) do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+      <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Имя" %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Текст отзыва" %><br>
+    <%= f.text_field :description %>
+  </div>
+
+
+
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.number_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Компания" %><br>
+    <%= f.number_field :company_name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

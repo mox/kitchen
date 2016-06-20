@@ -1,5 +1,57 @@
+@import "mixins";
+
 .admin{
   img{
   	max-width: 100px;
+  }
+  a{
+  	@include border-radius(15px);
+  	display: inline-block;
+  	color: red;
+  	padding: 10px;
+  	&:hover{color: #fff;}
+  }
+  nav{
+  	background-color: #000;
+  	height: 150px;
+  	ul{
+  		margin-left: 120px;
+  		margin-top: -20px;
+  		li{
+  			
+  			list-style-type: none;
+  			margin-right: 30px;
+  			a{padding: 5px;display: inline-block;}
+  		}
+
+  	}
+  	img{
+  		float: left;
+  		padding: 0 30px;
+  		margin-top: -25px;
+  	}
+  	a{
+  		display: inline;
+  		color: #fff;
+  		padding: 20px;
+  		text-decoration: underline;
+  		&#logo:hover{
+  			background-color: transparent;
+  		}
+    }	
+    .login-nav{
+    	float: left;
+    	margin-top: 50px;
+    }
+    .main-nav{
+    	margin-left: 680px;
+    	padding-top: 50px;
+    }
+  }
+  .content{
+  	padding: 0 30px;
+  	table{
+  		width: 100%;
+  	}
   }
 }

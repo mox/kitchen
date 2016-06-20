@@ -32,3 +32,18 @@
     <% end %>
     </div>
 </div>
+
+
+<div id="reviews">
+    <div class="wrapper">
+        <h2>Отзывы</h2>
+        <% @reviews.each do |review| %>
+            <div class="review">
+                <span class="name"><%= review.name %></span>
+                <span class="company"><%= review.company_name %></span>
+                <p><%= review.description %></p>
+                <p class="date"><%= review.created_at %></p>
+            </div>
+        <% end %>
+    </div>
+</div>

@@ -8,20 +8,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="admin">
-	<nav>
-		<%= render 'layouts/admin_logging' %>
+	 
+	  <%= render 'layouts/admin_logging' %>
 
-		<%= link_to "Продукты", products_path %>
-		<%= link_to "Заказы", orders_path %>
-    <%= link_to "Пользователи", users_path %>
-    <%= link_to "Слайдер", sliders_path %>
-	</nav>
-	
     <div class="wrapper">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>    
     </div>
   </div>
-  <%= yield %>
+  <div class="content">
+    <%= yield %>
+  </div>  
 </body>
 </html>

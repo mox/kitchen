@@ -1,6 +1,23 @@
-<% if user_signed_in? %>
-  <li><%= link_to current_user.email, edit_user_registration_path %></li>
-  <li><%= link_to 'Выход', destroy_user_session_path, :method=>'delete' %></li>
-<% else %>
-  <li><%= link_to "Войти", new_user_session_path %></li>  
-<% end %>
+
+<nav>
+	<% if user_signed_in? and current_user.admin? %>
+		<div class="login-nav"> 
+		  <a id="logo" href="/"><%= image_tag 'logo.png' %></a>
+		  <%= link_to "Продукты", products_path %>
+		  <%= link_to "Заказы", orders_path %>
+		  <%= link_to "Пользователи", users_path %>
+		  <%= link_to "Слайдер", sliders_path %>
+		  <%= link_to "Отзывы", reviews_path %>
+		</div>
+	<% end %>
+	<div class="main-nav">  		
+	  <ul>
+	    <% if user_signed_in? %>
+		  <li><%= link_to current_user.email, edit_user_registration_path %></li>
+		  <li><%= link_to 'Выход', destroy_user_session_path, :method=>'delete' %></li>
+		<% else %>
+		  <li><%= link_to "Войти", new_user_session_path %></li>  
+		<% end %>
+	  </ul> 
+	</div>
+</nav>

@@ -52,3 +52,9 @@ header{
 		@include gallery(4);
 	}
 }
+.review{
+  @include span(3);
+  &:last-child{
+  	@include span(3 last);
+  }
+}
