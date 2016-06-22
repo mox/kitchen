@@ -13,11 +13,12 @@ ready = ->
       slideSpeed : 300
       paginationSpeed : 400
       singleItem:true
+      navigationText: ["<", ">"]
   });
   $(window).scroll (event) ->
 	  scroll = $(window).scrollTop()
 	  # Do something
-	  if scroll > 20
+	  if scroll > 140
 	  	$("#menu").addClass("fix-menu")
 	  	console.log("test")
 	  else 

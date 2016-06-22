@@ -40,6 +40,12 @@ header{
   .wrapper{
     position: relative;
     z-index: 9999;
+    background: 
+      image-url("header_left_bg") no-repeat 0 5px,
+      image-url("header_right_bg") no-repeat 100% 0;
+    background-size: 65px, 150px;
+
+    // background-clip: padding-box:
   }
   #logo{
     img{
@@ -48,7 +54,13 @@ header{
   }
   
   &::after{
-    @include border-radius(50%);
+    @include border-bottom-radius(50%);
+
+    background: 
+      image-url("header_left") repeat-y -100px 0,
+      image-url("header_right") repeat-y 100% 0px;
+    background-size: 25%;
+    
     border-bottom: 0.5px solid yellow;
     display: block;
     content: "";
@@ -62,23 +74,23 @@ header{
 .phones{
   margin-top: 15px;
   a{
+    
     color: #fff;
     display: inline-block;
     font-size: 28pt;
     font-weight: 900;
-    margin:5px 0;
+    margin:5px 60px;
   }
 }
 #menu{
   background-color: #000;
   
-  position: fixed;
-	top: 150px;
-  left:0;
+  position: relative;
   z-index: 9999;
   width: 100%;
 
   &.fix-menu{
+    position: fixed;
     top:0;
   }
 
@@ -151,9 +163,41 @@ $product-classes: "hot" "new" "sale";
 }
 
 .owl-carousel{
-  margin-top: 75px;
+  // margin-top: -110px;
+  .owl-wrapper-outer{
+    position: relative;
+    top: -1px;
+    z-index: 1;
+  }
   .slide{
     img{width: 100%;}
+  }
+  .owl-pagination{
+    // margin-top: -50px;
+  }
+  .owl-buttons{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: 10;
+
+    .owl-prev, .owl-next{
+      @include border-radius(50% !important);
+      position: absolute;
+      font-size: 24pt !important;
+      font-weight: 900 !important;
+      height: 42px;
+      padding-top: 5px !important;
+      width: 30px;
+
+    }
+    .owl-prev{
+      left: 0;
+    }
+
+    .owl-next{
+      right: 0;
+    }
   }
 }
 #messages{
