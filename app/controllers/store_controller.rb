@@ -1,4 +1,5 @@
 class StoreController < ApplicationController
+	layout 'home'
   
   def index
     @products = Product.is_public.order(:title)

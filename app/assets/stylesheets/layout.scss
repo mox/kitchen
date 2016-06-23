@@ -26,6 +26,9 @@ header{
 		a{padding: 0;}
 		img{margin: 10px;}
 	}
+	.social{
+		@include span(4.5 at 1.5 isolate);
+	}
 }
 
 #menu{
@@ -57,4 +60,18 @@ header{
   &:last-child{
   	@include span(3 last);
   }
+}
+footer{	
+	.col1{
+		@include span(first 2);
+	}
+	.col2{
+		@include span(3);
+	}
+	.social{
+		@include span(4);
+	}
+	.help{
+		@include span(3 last);
+	}
 }

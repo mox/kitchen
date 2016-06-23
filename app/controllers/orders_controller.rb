@@ -42,7 +42,7 @@ class OrdersController < ApplicationController
         format.html { redirect_to store_url, notice:
             'Спасибо за заказ, дождитесь ответа оператора.' }
       else
-        @cart = current_cart
+        # @cart = current_cart
         format.html { render :new }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
@@ -81,6 +81,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :address, :email, :pay_type)
+      params.require(:order).permit(:name, :phone)
     end
 end

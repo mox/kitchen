@@ -1,66 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>KitchenApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Ubuntu&subset=latin,cyrillic' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <header>
-    <div class="wrapper">
-      <div class="phones">
-        <a href="#">+7 777 333 99 00</a>
-        <a href="#">+7 7232  33 22 11</a>
-      </div>
-      <div class="logo"><a id="logo" href="/"><%= image_tag 'logo.png' %></a></div>
-      <div class="social">
-        
-      </div>
-    </div>
-  </header>
-  <div id="menu">
-    <div class="wrapper">
-      <ul>
-        <li><a href="#">Доставка</a></li>
-        <li><a href="#">Первые блюда</a></li>
-        <li><a href="#">Вторые блюда</a></li>
-        <li><a href="#">Роллы/сеты</a></li>
-        <li><a href="#">Напитки</a></li>
-        <li><a id="show-cart">
-          <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>             
-            <%= render partial: 'carts/cart', locals: { cart: @cart } %>
-          <% end %>
-        <br> Корзина</a>
-        
-        </li>
-      </ul>
-    </div>
-  </div>
-  
-  <div id="messages">
-  <% if notice %>
-        <p class="notice"><%= notice %></p>
-        
-  <% end %>
-  <% if alert %>
-        
-        <p class="alert"><%= alert %></p>
-  <% end %>
-  </div>
 
+  <%= render "layouts/header" %>
+  
+
+  
+<div id="content" class="wrapper">
   <%= yield %>
- 
-  <footer>
-    <div class="wrapper">
-      <p>
-        Все права защищены. &copy; 2016
-        <div class="admin">
-          <%= render 'layouts/admin_logging' %>
-        </div>
-      </p>
-    </div>
-  </footer>
-</body>
-</html>
+</div>
+  
+  <%= render 'layouts/footer' %>

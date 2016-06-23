@@ -8,4 +8,11 @@ module StoreHelper
       delimiter: " ",
       format: "%n %u")
   end 
+  def to_time(datetime)
+  	content_tag :p, class: "date" do 
+  		content_tag(:span, datetime.strftime("%H:%M")) +
+  		datetime.strftime("%d.%m.%y")
+  	end
+  	
+  end
 end

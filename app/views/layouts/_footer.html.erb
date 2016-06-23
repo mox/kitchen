@@ -1,0 +1,43 @@
+<footer>
+  <div class="wrapper">  
+    <div class="col1">
+      <%= image_tag "logo" %>
+    </div>  
+    <div class="col2 phones">
+      <%= render 'layouts/order_now' %>
+    </div>      
+    <div class="social">
+      <div class="inner">
+        <%= render 'layouts/social' %>
+      </div>  
+    </div>
+    
+    <div class="help">
+      <p>
+        <a href="#">Помощь</a>
+        <a href="#">Адреса и телефоны</a>
+      </p>
+      <p>
+        <a href="#">feedback@ekspresskuhnya.kz</a>
+      </p>
+      <p><%= link_to "Добавить отзыв", new_review_path %></p>
+      
+      <% if user_signed_in? %>
+        <a><%= link_to current_user.email, edit_user_registration_path %></a>
+        <a><%= link_to 'Выход', destroy_user_session_path, :method=>'delete' %></a>
+      <% else %>
+        <a><%= link_to "Войти", new_user_session_path %></a>  
+      <% end %>
+    </div>      
+  </div>
+  
+</footer>
+<% if user_signed_in? and current_user.admin? %>
+<div class="admin">
+  <div class="wrapper">
+     <%= render 'layouts/admin_logging' %>
+  </div>
+</div>
+<% end %>
+</body>
+</html>

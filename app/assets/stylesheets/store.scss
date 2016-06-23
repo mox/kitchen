@@ -15,16 +15,22 @@ a{
 }
 #cart{
   position: relative;
+  span{
+    font-weight: 900;
+    text-align: right;
+    float: right;
+  }
 }
 #cart-description{
   float: right;
   position: absolute;
   right: -10px;
-  top: 75px;
+  top: 58px;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 20px;
   min-width: 240px;
   table{
+    margin-bottom: 15px;
     width: 100%;
   }
   input{
@@ -36,18 +42,19 @@ header{
   background:
     #000 image-url("fire.png") no-repeat 50% 5px;
   background-size: 30%;
-  height: 160px;
+  height: 150px;
   .wrapper{
     position: relative;
     z-index: 9999;
     background: 
       image-url("header_left_bg") no-repeat 0 5px,
       image-url("header_right_bg") no-repeat 100% 0;
-    background-size: 65px, 150px;
+    background-size: 65px, 200px;
 
     // background-clip: padding-box:
   }
-  #logo{
+  .logo{
+    a:hover{background-color: transparent;}
     img{
       width: 150px;
     }
@@ -57,8 +64,8 @@ header{
     @include border-bottom-radius(50%);
 
     background: 
-      image-url("header_left") repeat-y -100px 0,
-      image-url("header_right") repeat-y 100% 0px;
+      image-url("header_left") repeat-y -100px -20px,
+      image-url("header_right") repeat-y 110% -20px;
     background-size: 25%;
     
     border-bottom: 0.5px solid yellow;
@@ -72,14 +79,64 @@ header{
 
 }
 .phones{
-  margin-top: 15px;
-  a{
-    
-    color: #fff;
+  .inner{
+    margin:5px 0 0 90px;
+  }
+  p{
+    margin: 0;
+    color: yellow;
+    font-size: 22pt;
+  }
+  a{    
+    color: yellow;
     display: inline-block;
-    font-size: 28pt;
+    font-size: 20pt;
     font-weight: 900;
-    margin:5px 60px;
+    &.white{
+      font-size: 38pt;
+      color: #fff;
+    }
+  }
+}
+.social{
+  text-align: right;
+  h1{
+    clear: both;
+    margin: 0;
+    color: #fff;
+    padding: 0px 0;
+    font-size: 24pt;
+  }
+}
+.social-icons{
+  margin: 10px 0 5px;
+  position: relative;
+  float: right;
+  ul{
+    margin: 0;
+    padding:0;
+    li{
+      list-style-type: none;
+      float: left;
+      margin-right: 10px;
+      &:last-child{margin-right: 0;}
+      a{
+        background: image-url(social) no-repeat;
+        background-size: 90px;
+        display: block;        
+        height: 30px;
+        width: 30px;
+
+        @each $social-class, $position in 
+          ("fb", "0 0"),
+          ("tw", "-30px 0"),
+          ("vk", "-60px 0"){
+            &.#{$social-class}{
+              background-position: #{$position};
+            }
+          }
+      }
+    }
   }
 }
 #menu{
@@ -94,17 +151,31 @@ header{
     top:0;
   }
 
-  a{color: #fff;}
+  a{
+    @include border-radius(10px);
+    color: #fff;
+    padding: 7px 10px;
+  }
   ul{
     list-style-type: none;
     margin: 0;
     li{
       float: left;
       margin-top:25px;
-      margin-bottom: 20px;
+      margin-bottom: 5px;
       padding: 0 10px;
+      &:first-child{
+        margin-right: 100px;
+        padding: 0;
+        a{
+          background-color: yellow;
+          color: #000;
+          padding: 7px 10px;
+        }
+      }
       &:last-child{
-        margin-top: 18px;
+        margin-top: 10px;
+        padding-right: 0;
         a{padding: 0}
       }
     }
@@ -115,13 +186,19 @@ header{
     clear: both;
   }
 }
-#menu-with-bg{
-  // background: url("menu_bg.png") no-repeat 50% 50%;
-  display: block;
-  // height: 500px;
-  // width: 646px;
-  text-align: center;
+#show-cart{
+  span{text-align: right;}
+  .cart-text{
+    @include border-radius(10px);
+    cursor: pointer;
+    background-color: red;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 3px 5px;
+  }
 }
+
 $product-classes: "hot" "new" "sale";
 @each $suffix-classes in $product-classes{
   .entry-is-#{$suffix-classes}{
@@ -140,22 +217,39 @@ $product-classes: "hot" "new" "sale";
   }
 }
 #catalog{  
+  background: 
+    image-url("bg_catalog1") no-repeat 8% 15%,
+    image-url("bg_catalog2") no-repeat 94% 7%;
+  background-size: 12%, 12%;
   .entry{
     position: relative;
     z-index: 5;
-    min-height: 400px;
+    min-height: 300px;
+    margin-bottom: 50px;
     img{
       width: 100%;
     }
+    h3{
+      margin: 15px 0 0;
+    }
+    p{
+      margin: 10px 0;
+    }
     .price_line{
+      span{
+        font-size: 18pt;
+        font-weight: 900;
+      }
       .button_to{
         float: right;
-        margin-top: -30px;
+        
         input{
+          @include border-radius(10px);
+          cursor: pointer;
           border: none;
           background-color: red;
           color: #fff;
-          padding: 10px 20px;
+          padding: 7px 20px;
         }
       }
     }
@@ -224,3 +318,87 @@ $product-classes: "hot" "new" "sale";
   }
 }
 
+#menu-with-bg{
+  background: 
+    url("menu_bg.png") no-repeat 50% 50%,
+    url("menu.png") no-repeat 55% 53%;
+  display: block;
+  height: 300px;
+  width: 346px;
+  margin: 0 auto;
+  text-align: center;
+  background-size: 80%, 35%;
+  text-indent: -9999px;
+}
+#reviews{
+  h2{text-align: center;padding-bottom: 20px;}
+  background-color: #000;
+  color: #fff;
+  padding: 10px 0 50px;
+  margin-top: 30px;
+  .name{
+    color: red;
+    font-size: 14pt;
+    font-weight: 900;
+  }
+  .company{font-size: 10pt;padding-left: 10px;}
+  .date{
+    color: yellow;
+    font-size: 9pt;
+    text-align: right;
+    span{
+      font-size: 10pt;
+      font-weight: 900;
+      margin-right: 8px;
+    }
+  }
+}
+footer{
+  background-color: #000;
+  color: #fff;
+  border: 3px solid yellow;
+  border-right: 0;
+  border-left: 0;
+  padding: 20px 0;
+  a{
+    color: yellow;
+    padding: 5px 0;
+    &:hover{
+      background-color: transparent;
+      color: red !important;
+    }
+  }
+  .col1{
+    img{width: 100%;}
+  }
+  .social-icons{
+    float: none;
+    margin-left: 50px;
+    margin-top: 20px;
+    a{
+      height: 70px !important;
+      width: 70px !important;
+      background-size: 215px !important;
+      @each $social-class, $position in 
+        ("fb", "0 0"),
+        ("tw", "-70px 0"),
+        ("vk", "-145px 0"){
+          &.#{$social-class}{
+            background-position: #{$position} !important;
+          }
+        }
+    }
+  }
+  .help{
+    p{
+      &:first-child, &:last-child{
+        a{color: #fff;padding-right: 12px;}
+      }
+    }
+  }
+}
+
+#content{
+  margin-bottom: 50px;
+  min-height: 400px;
+}

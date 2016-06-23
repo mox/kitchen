@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 ready = ->
-  $("#messages" ).fadeOut(3000);
+  $("#messages" ).fadeOut(7000);
 
   $("#cart-description").hide()
   $("#show-cart").click ->
@@ -18,9 +18,8 @@ ready = ->
   $(window).scroll (event) ->
 	  scroll = $(window).scrollTop()
 	  # Do something
-	  if scroll > 140
+	  if scroll > 150
 	  	$("#menu").addClass("fix-menu")
-	  	console.log("test")
 	  else 
 	  	$("#menu").removeClass("fix-menu")
 	  return
