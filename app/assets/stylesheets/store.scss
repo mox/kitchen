@@ -320,8 +320,8 @@ $product-classes: "hot" "new" "sale";
 
 #menu-with-bg{
   background: 
-    url("menu_bg.png") no-repeat 50% 50%,
-    url("menu.png") no-repeat 55% 53%;
+    image-url("menu_bg.png") no-repeat 50% 50%,
+    image-url("menu.png") no-repeat 55% 53%;
   display: block;
   height: 300px;
   width: 346px;
