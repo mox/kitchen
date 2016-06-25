@@ -33,5 +33,8 @@ class User < ActiveRecord::Base
 	        if User.is_admins.count.zero?
 	            raise "Последний администратор не может быть удален"
 	        end
-	end
+		end
+		def is_admin?
+			
+		end
 end

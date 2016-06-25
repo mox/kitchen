@@ -4,12 +4,14 @@
 			<th>email</th>
 			<th>Админ?</th>
 			<th>&nbsp;</th>
+			<th>Регистрация</th>
 		</tr>
 	</thead>
 <% @users.each do |user| %>
 	<tr>
 		<td><%= user.email %></td>
 		<td><%= user.admin %></td>
+		<td><%= to_time(user.created_at) %></td>
 		<td>
 			<%= link_to 'Изменить', edit_user_path(user) %>
 			<%= link_to 'Удалить', user_path(user), method: :delete %></td>

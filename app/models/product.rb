@@ -22,6 +22,7 @@ class Product < ActiveRecord::Base
   before_destroy :ensure_not_referenced_by_any_line_item
 
   scope :is_public, -> { where(is_public: true) }
+  
   # scope :is_new, -> { where(is_new: true) }
   # scope :is_hot, -> { where(is_hot: true) }
   # scope :is_public, -> { where(is_public: true) }

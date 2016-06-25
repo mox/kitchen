@@ -18,22 +18,27 @@
 
   <div class="field">
     <%= f.label "Текст отзыва" %><br>
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
   </div>
 
 
-
+<% if current_user && current_user.admin? %>
+  <div class="field">
+      
+      <%= f.radio_button :is_public,  "Опубликовано?" %>&nbsp;<%= f.label "Опубликовано?" %>
+    </div>
+<% end %>
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.number_field :email %>
+    <%= f.email_field :email %>
   </div>
 
   <div class="field">
     <%= f.label "Компания" %><br>
-    <%= f.number_field :company_name %>
+    <%= f.text_field :company_name %>
   </div>
-
+<br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Добавить отзыв" %>
   </div>
 <% end %>

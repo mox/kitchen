@@ -7,7 +7,9 @@
     <tr>
       <th>Name</th>
       <th>Телефон</th>
-      <th colspan="3"></th>
+      <th>email</th>
+      <th>Добавлен</th>
+      <th>&nbsp;</th>
     </tr>
   </thead>
 
@@ -16,13 +18,15 @@
       <tr>
         <td><%= order.name %></td>
         <td><%= order.phone %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= order.email %></td>
+        <td><%= to_time(order.created_at) %></td>
+        <td>
+          <%= link_to 'Показать', order %>
+          <%= link_to 'изменить', edit_order_path(order) %>
+          <%= link_to 'Удалить', order, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-

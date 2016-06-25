@@ -1,10 +1,18 @@
 @import "mixins";
 
-html, body{padding: 0;margin: 0;}
-
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
 body{
   font-family: 'Ubuntu', sans-serif;
+
 }
+p{
+
+}
+
 a{
   // padding: 10px 20px;
   text-decoration: none;
@@ -400,5 +408,14 @@ footer{
 
 #content{
   margin-bottom: 50px;
-  min-height: 400px;
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -190px; 
+  &:after{
+    content: "";
+    display: block;
+  }
+}
+footer, #content:after {
+  height: 150px; 
 }

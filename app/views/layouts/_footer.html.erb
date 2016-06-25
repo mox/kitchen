@@ -33,11 +33,11 @@
   
 </footer>
 <% if user_signed_in? and current_user.admin? %>
-<div class="admin">
-  <div class="wrapper">
-     <%= render 'layouts/admin_logging' %>
+  <div class="admin">
+    <div class="wrapper">
+       <%= render 'layouts/admin_logging' %>
+    </div>
   </div>
-</div>
 <% end %>
 </body>
 </html>

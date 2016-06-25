@@ -1,5 +1,8 @@
 @import "mixins";
 
+footer + .admin{
+  background-color: #000;
+}
 .admin{
   img{
   	max-width: 100px;

@@ -12,7 +12,7 @@
 		<td><%= review.name %></td>
 		<td><%= truncate(review.description) %></td>
 		<td><%= review.is_public %></td>
-		<td><%= review.created_at %></td>
+		<td><%= to_time(review.created_at) %></td>
 		<td>
 			<%= link_to "Изменить", edit_review_path(review) %>
 			<%= link_to "Удалить", review_path(review), method: :delete, confirm: "Вы уверены, что хотите удалить отзыв?" %>

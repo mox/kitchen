@@ -1,6 +1,6 @@
 class SlidersController < ApplicationController
   before_action :set_slider, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_admin!
+  before_action :authenticate_admin!
   layout 'admin'
 
   def index

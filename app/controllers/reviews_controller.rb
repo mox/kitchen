@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_admin!
-  layout 'admin', extend: [ :index, :new ]
+  before_action :authenticate_admin!, except: [ :new, :create ]
+  layout 'admin', except: [ :new ]
 
   def index
   	@reviews = Review.all
@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to reviews_path, notice: 'Отзыв был опубликован, после модерации он появится на сайте.' }
+        format.html { redirect_to store_path, notice: 'Отзыв был опубликован, после модерации он появится на сайте.' }
         format.json { render :show, status: :created, location: reviews_path }
       else
         format.html { render :new }
