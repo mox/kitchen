@@ -17,12 +17,20 @@
 #
 
 class Product < ActiveRecord::Base
+  mount_uploader :image_url, ProductUploader
+
   has_many :line_items
   has_many :orders, through: :line_items
   before_destroy :ensure_not_referenced_by_any_line_item
 
+
   scope :is_public, -> { where(is_public: true) }
   
+  scope :first_course, -> { where(category: CATEGORIES[0]) }
+  scope :second_course, -> { where(category: CATEGORIES[1]) }
+  scope :rolls_sets, -> { where(category: CATEGORIES[2]) }
+  scope :drinks, -> { where(category: CATEGORIES[3]) }
+
   # scope :is_new, -> { where(is_new: true) }
   # scope :is_hot, -> { where(is_hot: true) }
   # scope :is_public, -> { where(is_public: true) }

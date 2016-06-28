@@ -29,12 +29,12 @@
   <div id="menu">
     <div class="wrapper">
       <ul>
-        <li><a href="#">Доставка</a></li>
-        <li><a href="#">Первые блюда</a></li>
-        <li><a href="#">Вторые блюда</a></li>
-        <li><a href="#">Роллы/сеты</a></li>
-        <li><a href="#">Напитки</a></li>
-        <li><a href="#">О кухне</a></li>
+        <li><%= link_to 'Доставка', shipping_path %></li>
+        <li><%= link_to 'Первые блюда', store_path(anchor: 'first') %></li>
+        <li><%= link_to 'Вторые блюда', store_path(anchor: 'second') %></li>
+        <li><%= link_to 'Роллы/сеты', store_path(anchor: 'third') %><</li>
+        <li><%= link_to 'Напитки', store_path(anchor: 'fourth') %></li>
+        <li><%= link_to 'О кухне', about_path %></li>
         <li><a id="show-cart">
           <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>             
             <%= render partial: 'carts/cart', locals: { cart: @cart } %>

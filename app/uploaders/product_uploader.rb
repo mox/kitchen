@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class SlideUploader < CarrierWave::Uploader::Base
+class ProductUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
@@ -25,7 +25,7 @@ class SlideUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  process :resize_to_fill => [1800, 500]
+  process :resize_to_fill => [390, 200]
   #
   # def scale(width, height)
   #   # do something

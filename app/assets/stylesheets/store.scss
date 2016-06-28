@@ -224,11 +224,21 @@ $product-classes: "hot" "new" "sale";
     }
   }
 }
-#catalog{  
+.content-with-bg{
   background: 
     image-url("bg_catalog1") no-repeat 8% 15%,
     image-url("bg_catalog2") no-repeat 94% 7%;
   background-size: 12%, 12%;
+}
+#content{
+  @extend .content-with-bg;
+}
+#catalog{  
+  @extend .content-with-bg;
+
+  .row{
+    clear: both;
+  }
   .entry{
     position: relative;
     z-index: 5;

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'static_pages/about', as: "about"
+
+  get 'static_pages/shipping', as: "shipping"
+
   devise_for :users
   resources :carts
   resources :orders

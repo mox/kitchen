@@ -12,7 +12,7 @@
 #
 
 class Slider < ActiveRecord::Base
-	# mount_uploader :image_url, SlideUploader
+	mount_uploader :image_url, SlideUploader
 	scope :is_public, -> { where(is_public: true) }
 
 end
