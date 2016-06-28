@@ -80,7 +80,8 @@ class ProductsController < ApplicationController
         :is_sale,
         :is_hot,
         :is_public,
-        :category
+        :category,
+        :remove_image_url
       )
     end
 end
