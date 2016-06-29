@@ -1,12 +1,14 @@
 class OrdersController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:new, :create]
+  before_action :set_cart, only: [:new, :create, :complete]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!, except: [:new, :create]
-  layout 'admin', except: [:new, :create]
+  layout 'admin', except: [:new, :create, :complete]
 
-  # GET /orders
-  # GET /orders.json
+  def complete
+    
+  end
+
   def index
     @orders = Order.all
   end
@@ -39,7 +41,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifier.received(@order).deliver
-        format.html { redirect_to store_url, notice:
+        format.html { redirect_to order_complete_path, notice:
             'Спасибо за заказ, дождитесь ответа оператора.' }
       else
         # @cart = current_cart

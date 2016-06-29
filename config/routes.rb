@@ -3,9 +3,13 @@ Rails.application.routes.draw do
 
   get 'static_pages/shipping', as: "shipping"
 
+  get 'orders/complete', as: "order_complete"
+
   devise_for :users
   resources :carts
-  resources :orders
+  
+  resources :orders 
+
   resources :carts
   resources :line_items  
 
