@@ -23,7 +23,7 @@ class ProductUploader < CarrierWave::Uploader::Base
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
-
+  
   # Process files as they are uploaded:
   process :resize_to_fill => [390, 200]
   #
@@ -47,5 +47,5 @@ class ProductUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
+  CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
 end
