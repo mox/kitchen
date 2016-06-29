@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:new, :create, :complete]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!, except: [:new, :create]
+  before_action :authenticate_admin!, except: [:new, :create, :complete]
   layout 'admin', except: [:new, :create, :complete]
 
   def complete
