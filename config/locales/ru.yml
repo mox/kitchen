@@ -1,5 +1,8 @@
 ru:
   activerecord:
+    models:
+      attributes:
+        price: 'цена'
     errors:
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'

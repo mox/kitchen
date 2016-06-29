@@ -70,3 +70,5 @@ end
 gem 'puma'
 
 gem 'rmagick'
+
+gem 'yandex-metrica-rails'

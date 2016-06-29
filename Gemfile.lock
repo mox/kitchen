@@ -203,6 +203,7 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    yandex-metrica-rails (0.1.4)
 
 PLATFORMS
   ruby
@@ -235,6 +236,7 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+  yandex-metrica-rails
 
 BUNDLED WITH
    1.11.2

@@ -23,7 +23,7 @@ class Product < ActiveRecord::Base
   has_many :orders, through: :line_items
   # before_destroy :ensure_not_referenced_by_any_line_item
 
-  validates :price, presence: true
+  validates :price, :title, :description, :image_url, presence: true
 
   scope :is_public, -> { where(is_public: true) }
   
