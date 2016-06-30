@@ -4,7 +4,7 @@ $susy: (
   container: 1024px,
   columns: 12,
   gutters: 1/4,
-  global-box-sizing: border-box,
+  global-box-sizing: border-box,  
   debug: (
     // image: show,
     output: background,
@@ -73,5 +73,15 @@ footer{
 	}
 	.help{
 		@include span(3 last);
+	}
+}
+
+#sales{
+	margin-bottom: 50px;
+	clear: both;
+	.item{
+		@include gallery(6);
+
+		img{width: 100%;}
 	}
 }

@@ -23,6 +23,10 @@
         </div>
         <a name="fourth"></a>
         <div class="row">
+            <%= render partial: "product", collection: @garnish, as: :product %>
+        </div>
+        <a name="five"></a>
+        <div class="row">
             <%= render partial: "product", collection: @drinks, as: :product %>
         </div>
     </div>

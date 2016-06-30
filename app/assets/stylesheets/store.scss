@@ -114,6 +114,7 @@ header{
     color: #fff;
     padding: 0px 0;
     font-size: 24pt;
+    line-height: 24pt;
   }
 }
 .social-icons{
@@ -173,7 +174,7 @@ header{
       margin-bottom: 5px;
       padding: 0 10px;
       &:first-child{
-        margin-right: 100px;
+        margin-right: 0px;
         padding: 0;
         a{
           background-color: yellow;
@@ -420,7 +421,7 @@ footer{
   margin-bottom: 50px;
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -190px; 
+  margin-bottom: -130px; 
   &:after{
     content: "";
     display: block;

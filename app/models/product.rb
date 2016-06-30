@@ -31,12 +31,13 @@ class Product < ActiveRecord::Base
   scope :second_course, -> { where(category: CATEGORIES[1]) }
   scope :rolls_sets, -> { where(category: CATEGORIES[2]) }
   scope :drinks, -> { where(category: CATEGORIES[3]) }
+  scope :garnish, -> { where(category: CATEGORIES[4]) }
 
   # scope :is_new, -> { where(is_new: true) }
   # scope :is_hot, -> { where(is_hot: true) }
   # scope :is_public, -> { where(is_public: true) }
 
-  CATEGORIES = [ 'Первое блюдо', "Второе блюдо", "Роллы/сеты", "Напиток" ].freeze
+  CATEGORIES = [ 'Первое блюдо', "Второе блюдо", "Роллы/сеты", "Напиток", "Гарниры" ].freeze
   
   # private
   #   # убеждаемся в отсутствии товарных позиций, ссылающихся на данный товар

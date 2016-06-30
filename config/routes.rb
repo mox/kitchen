@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+  
+  resources :sales do
+    get 'list', on: :collection, as: "list"
+  end
+
   get 'static_pages/about', as: "about"
 
   get 'static_pages/shipping', as: "shipping"
+
+  
 
   get 'orders/complete', as: "order_complete"
 

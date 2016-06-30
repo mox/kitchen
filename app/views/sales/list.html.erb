@@ -1,0 +1,11 @@
+<h1>Акции и скидки</h1>
+
+<div id="sales">
+	<% @sales.each do |sale| %>
+		<div class="sale item">
+			<%= image_tag sale.image %>
+			<h2><%= sale.title %></h2>
+			<p><%= sale.description %></p>
+		</div>
+	<% end %>
+</div>
