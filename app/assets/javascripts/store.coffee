@@ -19,9 +19,9 @@ ready = ->
 	  scroll = $(window).scrollTop()
 	  # Do something
 	  if scroll > 150
-	  	$("#menu").addClass("fix-menu")
+	  	$("header").addClass("fix")
 	  else 
-	  	$("#menu").removeClass("fix-menu")
+	  	$("header").removeClass("fix")
 	  return
 
   # wrap = $('body')

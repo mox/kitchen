@@ -17,22 +17,31 @@ $susy: (
 }
 
 header{
-	
-	.phones{
-		@include span(first 5);
-	}
-	.logo{
-		@include span(2 at 2);
-		a{padding: 0;}
-		img{margin: 10px;}
-	}
-	.social{
-		@include span(4.5 at 1.5 isolate);
+	.wrapper{
+		@include container;
+		.col1{
+			@include span(first 2.3);	
+		}
+		.col2{
+			@include span(2.6);	
+		}
+		.col3{
+			@include span(1.5);	
+		}
+		.col4{
+			@include span(2.1);	
+		}
+		.col5{
+			@include span(2);	
+		}
+		.col6{
+			@include span(last 1.3);	
+		}
 	}
 }
 
 #menu{
-	
+	@include container;
 	&::after{
 		content: '';
 		display: block;
@@ -41,11 +50,11 @@ header{
 	ul{
 		@include span(12 first last);
 	}
-	li{
-		&:last-child{
-			float: right;
-		}
-	}
+	// li{
+	// 	&:last-child{
+	// 		float: right;
+	// 	}
+	// }
 }
 
 #catalog{

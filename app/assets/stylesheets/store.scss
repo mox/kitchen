@@ -33,13 +33,15 @@ a{
   float: right;
   position: absolute;
   right: -10px;
-  top: 58px;
+  top: 85px;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 20px;
   min-width: 240px;
   table{
+    color: #fff;
     margin-bottom: 15px;
     width: 100%;
+    a{color: red;}
   }
   input{
     float: right;
@@ -47,19 +49,93 @@ a{
   }
 }
 header{
-  background:
-    #000 image-url("fire.png") no-repeat 50% 5px;
-  background-size: 30%;
-  height: 150px;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  // height: 125px;
   .wrapper{
-    position: relative;
-    z-index: 9999;
+
     background: 
-      image-url("header_left_bg") no-repeat 0 5px,
-      image-url("header_right_bg") no-repeat 100% 0;
-    background-size: 65px, 200px;
+      image-url("header_left_bg") no-repeat 140px 5px;
+      // image-url("header_right_bg") no-repeat 100% 0;
+      // image-url("21.jpg") no-repeat 60% 0;
+    background-size: 40px;
+    // background-size: 120%;
 
     // background-clip: padding-box:
+    div{
+      position: relative;
+      z-index: 9999;
+    }
+  }
+  &.fix{
+    position: fixed;
+    top:0;
+    z-index: 9999;
+  }
+  #ship-col{
+    
+    a{
+      @include border-radius(10px);
+      border:1px solid yellow;
+      color: #fff;
+      display: inline-block;
+      font-size: 1.3em;
+      padding: 5px;
+      margin: 15px 0;
+    }
+  }
+  #slogan-col{
+    h1{
+      color: #fff;
+      font-size: 1.2em;
+      padding: 0 5px;
+      text-align: right;
+    }
+
+  }
+  #logo-col{
+    img{width: 100%;}
+  }
+  #order-now-col{
+
+    p{      
+      color: yellow;
+      padding: 0;
+      margin: 0;
+      font-size: 1.4em;
+      margin-top: 5px;
+    }
+    a{
+      color: #fff;
+      display: inline-block;
+      font-size: 1.6em;
+      font-weight: 900;
+      &:last-child{
+        color: yellow;
+        font-size: 1.42em;
+        font-weight: 100;
+      }
+    }
+  }
+  #cart-col{
+    #cart span{
+      color: yellow;
+      font-size: 1.6em;
+    }
+    .cart-text{
+      @include border-radius(10px);
+      border: 1px solid yellow;
+      display: inline-block;
+      float: right;
+      margin-top: 5px;
+      margin-left: 40px;
+      color: #fff;
+      cursor: pointer;   
+      display: inline-block;
+      padding: 5px;
+      font-size: 1.2em;
+    }
   }
   .logo{
     a:hover{background-color: transparent;}
@@ -71,9 +147,9 @@ header{
   &::after{
     @include border-bottom-radius(50%);
 
-    background: 
-      image-url("header_left") repeat-y -100px -20px,
-      image-url("header_right") repeat-y 110% -20px;
+    // background: 
+      // image-url("header_left") repeat-y -100px -20px,
+      // image-url("header_right") repeat-y 110% -20px;
     background-size: 25%;
     
     border-bottom: 0.5px solid yellow;
@@ -82,7 +158,7 @@ header{
     position: absolute;
     height: 150px;
     width: 100%;
-    top: -1px;
+    top: -51px;
   }
 
 }
@@ -118,7 +194,7 @@ header{
   }
 }
 .social-icons{
-  margin: 10px 0 5px;
+  margin: 15px 0 5px;
   position: relative;
   float: right;
   ul{
@@ -127,7 +203,7 @@ header{
     li{
       list-style-type: none;
       float: left;
-      margin-right: 10px;
+      margin-right: 1px;
       &:last-child{margin-right: 0;}
       a{
         background: image-url(social) no-repeat;
@@ -151,14 +227,6 @@ header{
 #menu{
   background-color: #000;
   
-  position: relative;
-  z-index: 9999;
-  width: 100%;
-
-  &.fix-menu{
-    position: fixed;
-    top:0;
-  }
 
   a{
     @include border-radius(10px);
@@ -170,22 +238,19 @@ header{
     margin: 0;
     li{
       float: left;
-      margin-top:25px;
-      margin-bottom: 5px;
-      padding: 0 10px;
+      margin: 15px 0;
+      padding: 0 5px;
       &:first-child{
-        margin-right: 0px;
+        margin-left: 90px;
         padding: 0;
         a{
-          background-color: yellow;
-          color: #000;
+          // background-color: yellow;
+          // color: #000;
           padding: 7px 10px;
         }
       }
       &:last-child{
-        margin-top: 10px;
-        padding-right: 0;
-        a{padding: 0}
+        
       }
     }
   }
@@ -197,15 +262,7 @@ header{
 }
 #show-cart{
   span{text-align: right;}
-  .cart-text{
-    @include border-radius(10px);
-    cursor: pointer;
-    background-color: red;
-    display: inline-block;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 3px 5px;
-  }
+  
 }
 
 $product-classes: "hot" "new" "sale";
