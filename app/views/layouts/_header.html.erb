@@ -44,11 +44,11 @@
     </div>
     <div id="menu">
       <ul>
-        <li><%= link_to 'Суши/роллы', store_path(anchor: 'third') %><</li>
-        <li><%= link_to 'Первые блюда', store_path(anchor: 'first') %></li>
-        <li><%= link_to 'Вторые блюда', store_path(anchor: 'second') %></li>        
-        <li><%= link_to 'Закуски/салаты', store_path(anchor: 'fourth') %></li>
-        <li><%= link_to 'Напитки', store_path(anchor: 'five') %></li>
+        <li><%= link_to 'Суши/роллы', store_path(anchor: 'first'), id: 'firstAnchor' %><</li>
+        <li><%= link_to 'Первые блюда', store_path(anchor: 'second'), id: 'secondAnchor' %></li>
+        <li><%= link_to 'Вторые блюда', store_path(anchor: 'third'), id: 'thirdAnchor' %></li>        
+        <li><%= link_to 'Закуски/салаты', store_path(anchor: 'fourth'), id: 'fourthAnchor' %></li>
+        <li><%= link_to 'Напитки', store_path(anchor: 'five'), id: 'fiveAnchor' %></li>
         <li><%= link_to 'Акции', list_sales_path %></li>
         <li><%= link_to 'О компании', about_path %></li>
         

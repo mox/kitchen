@@ -16,13 +16,17 @@ ready = ->
       navigationText: ["<", ">"]
   });
   $(window).scroll (event) ->
-	  scroll = $(window).scrollTop()
-	  # Do something
-	  if scroll > 150
-	  	$("header").addClass("fix")
-	  else 
-	  	$("header").removeClass("fix")
-	  return
+    scroll = $(window).scrollTop()
+    # Do something
+    if scroll > 150
+      $("header").addClass("fix")
+    else 
+      $("header").removeClass("fix")
+    return
+  $('#menu a').click ->
+    $('html, body').animate { scrollTop: $($.attr(this, 'href').substring(1)).offset().top - 100 }, 500
+    # console.log(this)
+  
 
   # wrap = $('body')
   # wrap.on 'scroll', (e) ->

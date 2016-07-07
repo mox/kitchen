@@ -37,7 +37,7 @@ class Product < ActiveRecord::Base
   # scope :is_hot, -> { where(is_hot: true) }
   # scope :is_public, -> { where(is_public: true) }
 
-  CATEGORIES = [ 'Первое блюдо', "Второе блюдо", "Роллы/сеты", "Напиток", "Гарниры" ].freeze
+  CATEGORIES = [ "Роллы/сеты", 'Первое блюдо', "Второе блюдо", "Закуски/салаты" ,  "Напиток" ].freeze
   
   # private
   #   # убеждаемся в отсутствии товарных позиций, ссылающихся на данный товар

@@ -53,13 +53,15 @@ header{
   .wrapper{
 
     background: 
-      image-url("header_left_bg") no-repeat 140px 5px;
-      // image-url("header_right_bg") no-repeat 100% 0;
+      image-url("header_left_bg") no-repeat 140px 7px,
+      image-url("4") no-repeat 740px 10px;
       // image-url("21.jpg") no-repeat 60% 0;
-    background-size: 40px;
+    background-size: 33px, 30px;
     // background-size: 120%;
 
     // background-clip: padding-box:
+    position: relative;
+    z-index: 2;
     div{
       position: relative;
       z-index: 9999;
@@ -144,9 +146,9 @@ header{
   &::after{
     @include border-bottom-radius(50%);
 
-    // background: 
-      // image-url("header_left") repeat-y -100px -20px,
-      // image-url("header_right") repeat-y 110% -20px;
+    background: 
+      image-url("header_left") repeat-y -100px -0px,
+      image-url("header_right") repeat-y 100% -0px;
     background-size: 25%;
     
     border-bottom: 0.5px solid yellow;
@@ -156,6 +158,7 @@ header{
     height: 150px;
     width: 100%;
     top: -51px;
+    z-index: 1;
   }
 
 }
