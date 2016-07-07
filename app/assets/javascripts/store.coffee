@@ -24,10 +24,8 @@ ready = ->
       $("header").removeClass("fix")
     return
   $('#menu a').click ->
-    $('html, body').animate { scrollTop: $($.attr(this, 'href').substring(1)).offset().top - 100 }, 500
-    # console.log(this)
-  
-
+    $('html, body').animate { scrollTop: $($.attr(this, 'href').substring(1)).offset().top - 300 }, 500
+    
   # wrap = $('body')
   # wrap.on 'scroll', (e) ->
   
