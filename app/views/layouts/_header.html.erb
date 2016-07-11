@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>KitchenApp</title>
+  <title>Экспресс Кухня - Доставка еды в Усть-Каменогорске, суши, роллы, горячие блюда</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Ubuntu&subset=latin,cyrillic' %>
   <%= csrf_meta_tags %>
+  <meta name="Keywords" content="доставка еды в Усть-Каменогорске, доставка суши, доставка роллов, доставка шашлыка, доставка еды, горячие блюда, горячие блюда в Усть-Каменогорске">
+  <meta name="Description" content="Доставка еды в Усть-Каменогорске! Доставка суши, роллов, шашлыка. Быстро и без проблем доставим обед домой и в офис. В ассортименте - Японская кухня. У нас лучшие роллы в Усть-Каменогорске! Попробовав, вам несомненно захочется узнать именно наш рецепт суши.">
 </head>
 <body>
   <header>
@@ -17,7 +19,7 @@
       </div>
       <div id="slogan-col" class="col2">
         <div class="inner">
-          <h1>Еда за 45 минут, или мы вернем Вам деньги</h1>
+          <h1>У голода нет шансов!</h1>
         </div>
       </div>
       <div id="logo-col" class="col3">
@@ -51,7 +53,7 @@
         <li><%= link_to 'Напитки', store_path(anchor: 'five'), id: 'fiveAnchor' %></li>
         <li><%= link_to 'Акции', list_sales_path %></li>
         <li><%= link_to 'О компании', about_path %></li>
-        
+        <li><%= link_to 'Правила', rules_path %></li>
       </ul>
     </div>
   </header>

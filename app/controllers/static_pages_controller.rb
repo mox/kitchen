@@ -4,4 +4,7 @@ class StaticPagesController < ApplicationController
 
   def shipping
   end
+
+  def rules  	
+  end
 end

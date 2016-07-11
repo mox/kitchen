@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'static_pages/shipping', as: "shipping"
 
-  
+  get 'static_pages/rules', as: "rules"
 
   get 'orders/complete', as: "order_complete"
 

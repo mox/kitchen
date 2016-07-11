@@ -87,7 +87,7 @@ header{
   #slogan-col{
     h1{
       color: #fff;
-      font-size: 1.1em;
+      font-size: 1.6em;
       padding: 0 5px;
       text-align: right;
     }
@@ -95,6 +95,7 @@ header{
   }
   #logo-col{
     img{width: 100%;}
+    a:hover{background-color: transparent;}
   }
   #order-now-col{
 
@@ -241,7 +242,7 @@ header{
       margin: 15px 0;
       padding: 0 5px;
       &:first-child{
-        margin-left: 90px;
+        margin-left: 0px;
         padding: 0;
         a{
           // background-color: yellow;
