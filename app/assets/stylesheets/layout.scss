@@ -65,10 +65,7 @@ header{
 	}
 }
 .review{
-  @include span(3);
-  &:last-child{
-  	@include span(3 last);
-  }
+  @include gallery(3);
 }
 footer{	
 	.col1{

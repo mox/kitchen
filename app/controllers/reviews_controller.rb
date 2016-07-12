@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!, except: [ :new, :create ]
-  layout 'admin', except: [ :new ]
+  layout 'admin', except: [ :new, :create ]
 
   def index
   	@reviews = Review.all

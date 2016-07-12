@@ -13,7 +13,7 @@
 #
 
 class Review < ActiveRecord::Base
-	validates :name, presence: true
+	validates :name, :description, presence: true
 	scope :is_public, -> { where(is_public: true) }
 	
 end
