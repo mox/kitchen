@@ -36,18 +36,20 @@
 <div id="reviews">
     <div class="wrapper">
         <h2>Отзывы</h2>
-        <% if @reviews.count > 0 %>
-            <% @reviews.each do |review| %>
-                <div class="review">
-                    <span class="name"><%= review.name %></span>
-                    <span class="company"><%= review.company_name %></span>
-                    <p><%= review.description %></p>
-                    <%= to_time(review.created_at) %>
-                </div>
-            <% end %>
-        <% else %>
-            <p>Отзывы отсутсвуют</p>
-        <% end %>         
+            <div class="gallery">
+            <% if @reviews.count > 0 %>
+                <% @reviews.each do |review| %>
+                    <div class="review">
+                        <span class="name"><%= review.name %></span>
+                        <span class="company"><%= review.company_name %></span>
+                        <p><%= review.description %></p>
+                        <%= to_time(review.created_at) %>
+                    </div>
+                <% end %>
+            <% else %>
+                <p>Отзывы отсутсвуют</p>
+            <% end %>         
+        </div>
     </div>
     <div id="keywords" class="wrapper">
         <p><strong>Доставка еды в Усть-Каменогорске</strong>! Доставка <strong>суши, роллов, шашлыка</strong>. Быстро и без проблем <strong>доставим обед домой и в офис</strong>. В ассортименте - Японская кухня. У нас лучшие <strong>роллы в Усть-Каменогорске</strong>! Попробовав, вам несомненно захочется узнать именно наш рецепт суши. </p>
