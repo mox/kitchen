@@ -14,11 +14,11 @@
     
     <div class="help">
       <p>
-        <a href="#">Помощь</a>
-        <a href="#">Адреса и телефоны</a>
+        <%= link_to 'Правила', rules_path %>
+        <%= link_to 'Адреса и телефоны', shipping_path %>
       </p>
       <p>
-        <a href="#">feedback@ekspresskuhnya.kz</a>
+        <a href="mailto:feedback@ekspresskuhnya.kz">feedback@ekspresskuhnya.kz</a>
       </p>
       <p><%= link_to "Добавить отзыв", new_review_path %></p>
       

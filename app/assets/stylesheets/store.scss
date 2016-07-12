@@ -294,6 +294,12 @@ $product-classes: "hot" "new" "sale";
 }
 #content{
   // @extend .content-with-bg;
+  a{
+    color: red;
+    &:hover{
+      color: #fff;
+    }
+  }
 }
 #catalog{  
   @extend .content-with-bg;
