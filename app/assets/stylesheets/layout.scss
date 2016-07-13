@@ -82,10 +82,10 @@ footer{
 		@include span(3);
 	}
 	.social{
-		@include span(4);
+		@include span(3.5);
 	}
 	.help{
-		@include span(2.7 last);
+		@include span(3.2 last);
 	}
 }
 
