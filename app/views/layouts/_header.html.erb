@@ -8,6 +8,7 @@
   <%= csrf_meta_tags %>
   <meta name="Keywords" content="доставка еды в Усть-Каменогорске, доставка суши, доставка роллов, доставка шашлыка, доставка еды, горячие блюда, горячие блюда в Усть-Каменогорске, доставка блюд">
   <meta name="Description" content="Доставка еды в Усть-Каменогорске! Доставка суши, роллов, шашлыка. Быстро и без проблем доставим обед домой и в офис. В ассортименте - Японская кухня. У нас лучшие роллы в Усть-Каменогорске! Попробовав, вам несомненно захочется узнать именно наш рецепт суши.">
+
 </head>
 <body>
   <header>
@@ -46,7 +47,7 @@
     </div>
     <div id="menu">
       <ul>
-        <li><%= link_to 'Суши/роллы', store_path(anchor: 'first'), id: 'firstAnchor' %><</li>
+        <li><%= link_to 'Суши/роллы', store_path(anchor: 'first'), id: 'firstAnchor' %></li>
         <li><%= link_to 'Первые блюда', store_path(anchor: 'second'), id: 'secondAnchor' %></li>
         <li><%= link_to 'Вторые блюда', store_path(anchor: 'third'), id: 'thirdAnchor' %></li>        
         <li><%= link_to 'Закуски/салаты', store_path(anchor: 'fourth'), id: 'fourthAnchor' %></li>

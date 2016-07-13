@@ -1,15 +1,19 @@
 @import "susy";
 
 $susy: (
+  math: static,
   container: 1024px,
   columns: 12,
-  gutters: 1/4,
+  // gutters: 2/6,
+  column-width: 70px,
   global-box-sizing: border-box,  
   debug: (
-    // image: show,
+    image: show,
     output: background,
   ),
 );
+
+@include border-box-sizing;
 
 
 .wrapper{
@@ -81,7 +85,7 @@ footer{
 		@include span(4);
 	}
 	.help{
-		@include span(3 last);
+		@include span(2.7 last);
 	}
 }
 
