@@ -64,7 +64,7 @@ header{
 }
 // @include at-breakpoint(12) {
 // 	#catalog{background: none;}
-	
+
 // }
 #catalog{
 	min-width: 1024px;
@@ -76,7 +76,7 @@ header{
 	.entry{
 		@include gallery(4);
 		&:nth-child(3n) {
-			clear:both;
+			
 		}
 	}
 }
