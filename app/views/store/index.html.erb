@@ -9,14 +9,12 @@
  
     <h2 id="menu-with-bg">Меню</h2>
     <div class="inner wrapper">
-        
+        <a name="first" id="first"></a>
         <div class="row">
-            <a name="first" id="first"></a>
             <%= render partial: "product", collection: @first_courses, as: :product %>
         </div>
-        
+        <a name="second" id="second"></a>
         <div class="row">
-            <a name="second" id="second"></a>
             <%= render partial: "product", collection: @second_courses, as: :product %>
         </div>
         <a name="third" id="third"></a>

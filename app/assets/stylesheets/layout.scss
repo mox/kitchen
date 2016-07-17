@@ -18,11 +18,13 @@ $susy: (
 
 .wrapper{
   @include container;
+  max-width: 1024px;
 }
 
 header{
+	min-width: 1024px;
 	.wrapper{
-		@include container;
+		
 		.col1{
 			@include span(first 2.3);	
 		}
@@ -60,16 +62,29 @@ header{
 	// 	}
 	// }
 }
-
+// @include at-breakpoint(12) {
+// 	#catalog{background: none;}
+	
+// }
 #catalog{
+	min-width: 1024px;
 	margin: 0;
-  	
+
+  	.row{
+  		@include container;
+  	}
 	.entry{
-		@include span(4);
+		@include gallery(4);
 		&:nth-child(3n) {
 			clear:both;
 		}
 	}
+}
+#reviews{
+	min-width: 1024px;
+}
+footer{
+	min-width: 1024px;
 }
 .review{
   .gallery{
