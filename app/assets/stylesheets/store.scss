@@ -106,11 +106,27 @@ header{
       font-size: 1.4em;
       margin-top: 5px;
     }
+    a.white{
+      &:after{
+        height: 25px;
+        position: relative;
+        display: block;
+        content: '';
+        background: image_url("1.png") no-repeat 0 0;
+        background-size: 90%;
+        width: 25px;
+        float: right;
+        left: 10px;
+        top:3px;
+      }
+    }
     a{
       color: #fff;
       display: inline-block;
       font-size: 1.6em;
       font-weight: 900;
+
+      
       &:last-child{
         color: yellow;
         font-size: 1.42em;
@@ -467,7 +483,7 @@ footer{
       background-size: 215px !important;
       @each $social-class, $position in 
         ("fb", "0 0"),
-        ("tw", "-70px 0"),
+        ("tw", "-73px 0"),
         ("vk", "-145px 0"){
           &.#{$social-class}{
             background-position: #{$position} !important;

@@ -65,7 +65,10 @@ header{
 	margin: 0;
   	
 	.entry{
-		@include gallery(4);
+		@include span(4);
+		&:nth-child(3n) {
+			clear:both;
+		}
 	}
 }
 .review{
