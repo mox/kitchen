@@ -72,3 +72,5 @@ gem 'mini_magick'
 gem 'yandex-metrica-rails'
 
 gem 'ckeditor'
+
+gem "dynamic_sitemaps"
