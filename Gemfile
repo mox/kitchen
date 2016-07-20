@@ -51,8 +51,6 @@ gem 'carrierwave'
 
 gem 'rails_12factor', group: :production
 
-gem 'carrierwave'
-
 group :development do
 	  # Access an IRB console on exception pages or by using <%= console %> in views
 	gem 'web-console', '~> 2.0'
@@ -72,3 +70,5 @@ gem 'puma'
 gem 'rmagick'
 
 gem 'yandex-metrica-rails'
+
+gem 'ckeditor'

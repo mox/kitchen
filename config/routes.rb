@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  mount Ckeditor::Engine => '/ckeditor'
   resources :sales do
     get 'list', on: :collection, as: "list"
   end
@@ -24,6 +25,8 @@ Rails.application.routes.draw do
   resources :users
   resources :sliders
   resources :reviews
+
+  resources :static_pages, only: [:index, :edit, :update]
 
   root to: 'store#index', as: 'store'
   # The priority is based upon order of creation: first created -> highest priority.

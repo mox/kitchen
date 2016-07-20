@@ -1,0 +1,9 @@
+<h2>Страницы</h2>
+<% @pages.each do |page| %>
+  <div>
+	<h3><%= page.title %></h3>
+	<p><%= truncate page.text,  escape: false %></p>
+	<p><%= link_to "Изменить", edit_static_page_path(page) %></p>
+  </div>
+  <hr>
+<% end %>

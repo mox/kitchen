@@ -15,4 +15,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require owl.carousel
+//= require ckeditor/init
 //= require_tree .
