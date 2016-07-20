@@ -68,7 +68,7 @@ end
 gem 'puma'
 
 gem 'rmagick'
-
+gem 'mini_magick'
 gem 'yandex-metrica-rails'
 
 gem 'ckeditor'
