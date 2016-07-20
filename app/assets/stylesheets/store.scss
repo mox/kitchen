@@ -301,14 +301,19 @@ $product-classes: "hot" "new" "sale";
 }
 .content-with-bg{
   background: 
-    image-url("bg_catalog1") no-repeat 8% 15%,
+    image-url("bg_catalog1") no-repeat 5% 5%,
     image-url("bg_catalog2") no-repeat 94% 7%,
     image-url("bottle") no-repeat 94% 27%,
-    image-url("gamburger") no-repeat 8% 37%,
-    image-url("rolls") no-repeat 94% 67%;
-  background-size: 12%, 12%, 6%, 10%, 12%;
+    image-url("gamburger") no-repeat 0% 37%,
+    image-url("rolls") no-repeat 100% 95%;
+  background-size: 12%, 12%, 3%, 6%, 8%;
 
-  
+  @media screen and (max-width: 1024px) {
+    background: 
+      image-url("bg_catalog1") no-repeat 5% 5%,
+      image-url("bg_catalog2") no-repeat 94% 7%;
+    background-size: 12%, 12%;
+  }
 }
 #content{
   // @extend .content-with-bg;
