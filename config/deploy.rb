@@ -36,11 +36,19 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 # set :linked_files, %w{config/database.yml}
 set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 set :linked_dirs, fetch(:linked_dirs) + %w{public/system public/uploads}
+
+# rake logs:tail[unicorn]
 namespace :logs do
-  desc "tail rails logs" 
-  task :tail_rails do
-    on roles(:app) do
-      execute "tail -f #{shared_path}/log/#{fetch(:rails_env)}.log"
+  task :tail, :file do |t, args|
+    if args[:file]
+      on roles(:app) do
+        execute "tail -f #{shared_path}/log/#{args[:file]}.log"
+      end
+    else
+      puts "please specify a logfile e.g: 'rake logs:tail[logfile]"
+      puts "will tail 'shared_path/log/logfile.log'"
+      puts "remember if you use zsh you'll need to format it as:"
+      puts "rake 'logs:tail[logfile]' (single quotes)"
     end
   end
 end
