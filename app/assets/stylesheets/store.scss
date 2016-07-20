@@ -301,12 +301,12 @@ $product-classes: "hot" "new" "sale";
 }
 .content-with-bg{
   background: 
-    image-url("bg_catalog1") no-repeat 5% 5%,
-    image-url("bg_catalog2") no-repeat 94% 7%,
+    image-url("bg_catalog1") no-repeat 50px 100px,
+    image-url("bg_catalog2") no-repeat 94% 100px,
     image-url("bottle") no-repeat 94% 27%,
-    image-url("gamburger") no-repeat 0% 37%,
-    image-url("rolls") no-repeat 100% 95%;
-  background-size: 12%, 12%, 3%, 6%, 8%;
+    // image-url("gamburger") no-repeat 0% 37%,
+    image-url("rolls") no-repeat 90% 95%;
+  background-size: 12%, 12%, 3%, 8%;
 
   @media screen and (max-width: 1024px) {
     background: 
