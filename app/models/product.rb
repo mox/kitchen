@@ -30,8 +30,8 @@ class Product < ActiveRecord::Base
   scope :first_course, -> { where(category: CATEGORIES[0]) }
   scope :second_course, -> { where(category: CATEGORIES[1]) }
   scope :rolls_sets, -> { where(category: CATEGORIES[2]) }
-  scope :drinks, -> { where(category: CATEGORIES[3]) }
-  scope :garnish, -> { where(category: CATEGORIES[4]) }
+  scope :garnish, -> { where(category: CATEGORIES[3]) }
+  scope :drinks, -> { where(category: CATEGORIES[4]) }
 
   # scope :is_new, -> { where(is_new: true) }
   # scope :is_hot, -> { where(is_hot: true) }
