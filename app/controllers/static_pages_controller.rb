@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   
-  before_action :authenticate_admin!, except: [ :index, :edit ]
+  before_action :authenticate_admin!, only: [ :index, :edit ]
   layout 'admin', only: [ :index, :edit ]
   
   def about
