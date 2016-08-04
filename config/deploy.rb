@@ -63,15 +63,8 @@ namespace :puma do
 
   before :start, :make_dirs
 end
-after "deploy:update_code", "sitemaps:create_symlink"
 
-namespace :sitemaps do
-  task :create_symlink, roles: :app do
-    run "mkdir -p #{shared_path}/sitemaps"
-    run "rm -rf #{release_path}/public/sitemaps"
-    run "ln -s #{shared_path}/sitemaps #{release_path}/public/sitemaps"
-  end
-end
+
 
 namespace :deploy do
   desc "Make sure local git is in sync with remote."
@@ -111,10 +104,21 @@ namespace :deploy do
 	  end
 	end
 
+
+
+  namespace :sitemaps do
+    task :create_symlink, roles: :app do
+      run "mkdir -p #{shared_path}/sitemaps"
+      run "rm -rf #{release_path}/public/sitemaps"
+      run "ln -s #{shared_path}/sitemaps #{release_path}/public/sitemaps"
+    end
+  end
+
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
+  
 end
 
 # ps aux | grep puma    # Get puma pid
