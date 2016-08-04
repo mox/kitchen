@@ -37,6 +37,14 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 set :linked_dirs, fetch(:linked_dirs) + %w{public/system public/uploads}
 
+
+namespace :sitemaps do
+  task :create_symlink, roles: :app do
+    run "mkdir -p #{shared_path}/sitemaps"
+    run "rm -rf #{release_path}/public/sitemaps"
+    run "ln -s #{shared_path}/sitemaps #{release_path}/public/sitemaps"
+  end
+end
 # rake logs:tail[unicorn]
 namespace :logs do
   task :tail, :file do |t, args|
@@ -105,20 +113,11 @@ namespace :deploy do
 	end
 
 
-
-  namespace :sitemaps do
-    task :create_symlink, roles: :app do
-      run "mkdir -p #{shared_path}/sitemaps"
-      run "rm -rf #{release_path}/public/sitemaps"
-      run "ln -s #{shared_path}/sitemaps #{release_path}/public/sitemaps"
-    end
-  end
-
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
-  
+
 end
 
 # ps aux | grep puma    # Get puma pid
